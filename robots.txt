@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ritterbeckaj.github.io/mcp-packs/sitemap.xml

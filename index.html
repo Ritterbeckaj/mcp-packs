@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Deterministic MCP Servers — 32 tools, no model calls, no API keys</title>
+<meta name="description" content="MCP servers for Claude, Cursor, OpenCode and Claude Code that return deterministic framework output instead of invented text. 32 tools across strategy, fact-checking, lead generation and monetisation. 26 of 32 make zero network calls.">
+<link rel="canonical" href="https://ritterbeckaj.github.io/mcp-packs/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Deterministic MCP Servers — 32 tools, no model calls">
+<meta property="og:description" content="Strategy frameworks, claim verification, lead generation and monetisation as MCP tools that return structured output instead of prose. 26 of 32 tools never touch the network.">
+<meta property="og:url" content="https://ritterbeckaj.github.io/mcp-packs/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebSite","name":"MCP Packs","url":"https://ritterbeckaj.github.io/mcp-packs/"},
+{"@type":"ItemList","name":"MCP tool packs","itemListElement":[
+{"@type":"ListItem","position":1,"name":"StrategyBrain Pro","url":"https://ritterbeck.gumroad.com/l/strategybrain-pro"},
+{"@type":"ListItem","position":2,"name":"FactCheck MCP","url":"https://ritterbeck.gumroad.com/l/factcheck-mcp"},
+{"@type":"ListItem","position":3,"name":"LeadGen MCP","url":"https://ritterbeck.gumroad.com/l/leadgen-mcp"},
+{"@type":"ListItem","position":4,"name":"Monetize MCP","url":"https://ritterbeck.gumroad.com/l/monetize-mcp"}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Do these MCP servers call an LLM?","acceptedAnswer":{"@type":"Answer","text":"No. Every tool is a pure function of its input. Same input, same output, no model call, no drift between runs."}},
+{"@type":"Question","name":"Which tools touch the network?","acceptedAnswer":{"@type":"Answer","text":"26 of the 32 tools make zero network calls. Four FactCheck tools and two LeadGen tools call free, keyless, read-only public endpoints such as Wikipedia and DuckDuckGo. When a network call fails the tool returns UNVERIFIED rather than inventing a result."}},
+{"@type":"Question","name":"How do I install them?","acceptedAnswer":{"@type":"Answer","text":"The free Strategy MCP tools install with npx -y strategy-mcp and work in Claude Desktop, Claude Code, Cursor and OpenCode. The paid packs are MCP servers you point your client at, or hosted endpoints you call with an API key."}},
+{"@type":"Question","name":"Is there a refund?","acceptedAnswer":{"@type":"Answer","text":"Yes, 30 days, on every pack."}}]}]}
+</script>
+<style>
+:root{--bg:#0b0d10;--fg:#e8e6e3;--dim:#9aa3ad;--line:#232a32;--acc:#7dd3a0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:64px 24px 96px}
+h1{font-size:2.15rem;line-height:1.15;letter-spacing:-.02em;margin:0 0 12px}
+h2{font-size:1.15rem;margin:44px 0 12px;letter-spacing:-.01em}
+p{margin:0 0 16px;color:#c9ced4}
+.lede{font-size:1.1rem;color:var(--dim);margin-bottom:32px}
+code{font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;background:#141a21;border:1px solid var(--line);padding:2px 6px;border-radius:4px}
+pre{background:#11161c;border:1px solid var(--line);border-radius:8px;padding:16px;overflow:auto}
+pre code{background:none;border:0;padding:0}
+table{width:100%;border-collapse:collapse;margin:8px 0 20px;font-size:15px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--dim);font-weight:500;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+td a{color:var(--acc)}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.note{border-left:2px solid var(--acc);padding-left:14px;color:var(--dim);font-size:15px}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--dim);font-size:14px}
+</style>
+</head>
+<body>
+<main>
+<h1>MCP servers that answer with a framework, not a guess</h1>
+<p class="lede">32 tools for Claude, Cursor, Claude Code and OpenCode. Each one runs a real analytical or verification procedure and returns structured output. No model call inside the tool, so the same input gives the same answer every time.</p>
+
+<pre><code>npx -y strategy-mcp</code></pre>
+<p>That installs the four free tools — <code>swot_analysis</code>, <code>marketing_mix</code>, <code>lean_canvas</code>, <code>decision_matrix</code> — and speaks MCP over stdio. Works in Claude Desktop, Claude Code, Cursor and OpenCode. <a href="https://www.npmjs.com/package/strategy-mcp">Package on npm</a>.</p>
+
+<h2>The packs</h2>
+<table>
+<thead><tr><th>Pack</th><th>Tools</th><th>Price</th></tr></thead>
+<tbody>
+<tr><td><a href="https://ritterbeck.gumroad.com/l/strategybrain-pro">StrategyBrain Pro</a><br><span style="color:var(--dim)">Porter's Five Forces, PESTLE, Ansoff, Jobs-to-be-Done, TAM/SAM/SOM, OKRs, roadmap, brainstorm</span></td><td>8</td><td>$12</td></tr>
+<tr><td><a href="https://ritterbeck.gumroad.com/l/factcheck-mcp">FactCheck MCP</a><br><span style="color:var(--dim)">Claim verification, source fetching, citation checks, anti-hallucination protocol</span></td><td>6</td><td>$12</td></tr>
+<tr><td><a href="https://ritterbeck.gumroad.com/l/leadgen-mcp">LeadGen MCP</a><br><span style="color:var(--dim)">Find leads, extract from a page, qualify, save, draft outreach</span></td><td>6</td><td>$12</td></tr>
+<tr><td><a href="https://ritterbeck.gumroad.com/l/monetize-mcp">Monetize MCP</a><br><span style="color:var(--dim)">Pricing, packaging, offer ladders, maintenance loop</span></td><td>8</td><td>$0+</td></tr>
+</tbody>
+</table>
+<p>All four together, 32 tools: <a href="https://ritterbeck.gumroad.com/mcp-bundle">The MCP Toolkit</a> at $29, or $79 with a 30-minute setup call. 30-day refund on every pack.</p>
+
+<h2>What actually touches the network</h2>
+<p>Most MCP listings say "fully local" and stop there. Here is the enumerated version:</p>
+<table>
+<thead><tr><th>Pack</th><th>Network</th></tr></thead>
+<tbody>
+<tr><td>StrategyBrain (12)</td><td>none</td></tr>
+<tr><td>Monetize (8)</td><td>none</td></tr>
+<tr><td>FactCheck (6)</td><td>4 tools → Wikipedia, Semantic Scholar, optional Google Fact Check. <code>cross_verify</code> and <code>anti_hallucination_protocol</code> are local.</td></tr>
+<tr><td>LeadGen (6)</td><td>2 tools → DuckDuckGo, plus the page you point it at. <code>qualify_lead</code>, <code>save_lead</code>, <code>list_leads</code>, <code>draft_outreach</code> are local.</td></tr>
+</tbody>
+</table>
+<p class="note">26 of 32 tools make zero network calls. The six that do hit free, keyless, read-only public endpoints — no account, no billing, nothing written. When a call fails the tool returns <code>UNVERIFIED</code> instead of inventing an answer.</p>
+
+<h2>Hosted endpoints</h2>
+<p>If you can't install anything locally, the same servers run over Streamable HTTP:</p>
+<pre><code>POST https://strategybrain-mcp.factcheck-mcp-worker.workers.dev/mcp
+x-api-key: &lt;your key&gt;</code></pre>
+<p>Write to <a href="mailto:day1ritterbeckaj@gmail.com">day1ritterbeckaj@gmail.com</a> for a trial key, or buy a pack and you get your own.</p>
+
+<h2>Why deterministic</h2>
+<p>An agent asked for a SWOT will happily write four plausible quadrants. That output is unfalsifiable — you can't tell a real analysis from a convincing one. These tools compute the cross-mapping, rank the options, score the criteria, and hand back the same structure every run, so the reasoning is inspectable and the result is reproducible.</p>
+
+<h2>Source</h2>
+<p>The free four are MIT-licensed: <a href="https://github.com/Ritterbeckaj/strategy-mcp">github.com/Ritterbeckaj/strategy-mcp</a>. Read the code before you run it.</p>
+
+<footer>
+MCP Packs — independently built. <a href="https://github.com/Ritterbeckaj/strategy-mcp">GitHub</a> · <a href="https://www.npmjs.com/package/strategy-mcp">npm</a>
+</footer>
+</main>
+</body>
+</html>
